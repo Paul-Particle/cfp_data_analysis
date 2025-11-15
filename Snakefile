@@ -60,19 +60,6 @@ rule process_data:
     script:
         "scripts/processing.py"
 
-# rule render_notebook:
-#     input:
-#         notebook="notebooks/CFP_analysis_and_visualization.ipynb",
-#         data="data/processed_data.feather"
-#     output:
-#         "notebooks/results/CFP_analysis_and_visualization.html"
-#     params:
-#         intermediate_html=lambda wildcards, input: str(input.notebook).replace(".ipynb", ".html")
-#     shell:
-#         '''
-#         jupyter nbconvert --to html --execute {input.notebook}
-#         mv {params.intermediate_html} {output}
-#         '''
 
 rule verify_data:
     input:
